@@ -1,0 +1,7 @@
+{
+  "name": "HumanBenchmark",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
