@@ -6,6 +6,10 @@ $margin:200px;
 .botonsMenu2{
   margin-right: $margin
 }
+.bottomMenu{
+  display:flex;
+  justify-content: space-around;
+}
 
 //DEFAULT 
 #container {

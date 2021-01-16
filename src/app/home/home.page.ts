@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,23 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(public toastController: ToastController) {}
+
+  register(){
+    this.presentToast("Pestanya Registrar-se")
+  }
+
+  login(){
+    this.presentToast("Pestanya Login")
+  }
+
+  async presentToast(missatge) {
+    const toast = await this.toastController.create({
+      message: missatge,
+      duration: 1000,
+      position: 'middle'
+    });
+    toast.present();
+  }
 
 }
