@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "humanbenchmark-98b73": {
+      "hosting": {
+        "app": [
+          "humanbenchmark-98b73"
+        ]
+      }
+    }
+  }
+}

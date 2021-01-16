@@ -5,5 +5,19 @@
 </ion-header>
 
 <ion-content>
-  <ion-button (click)="gotoAccountPage()">Go to the Other Menu</ion-button>
+  <form>
+    <ion-item lines="full">
+      <ion-label position="floatin">Email</ion-label>
+      <ion-input type="text" #email required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floatin">Password</ion-label>
+      <ion-input type="password" #password required></ion-input>
+    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" (click)="onLogin(email, password)" expand="block">Registrer</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
 </ion-content>
