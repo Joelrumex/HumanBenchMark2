@@ -34,7 +34,15 @@ const routes: Routes = [
   {
     path: 'home2',
     loadChildren: () => import('./home2/home2.module').then( m => m.Home2PageModule)
+  },  {
+    path: 'forgot-password',
+    loadChildren: () => import('./account/forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule)
   },
+  {
+    path: 'email-verified',
+    loadChildren: () => import('./account/email-verified/email-verified.module').then( m => m.EmailVerifiedPageModule)
+  },
+
 
 
 ];

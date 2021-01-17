@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Email Verificado</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="user$ | async as user">
+  <ion-row>
+    <ion-col>
+      <h1>Gracies per Registrarte a HumanBenchmark!!</h1>
+      <h3>T'hem enviat un correu a <strong>{{user.email}}</strong></h3>
+      <h3>Si us plau revisa el teu correu electronic i clica a verificar el teu correu electronic</h3>
+    </ion-col>
+  </ion-row>
+  <ion-col>
+    <ion-row>
+      <ion-button type="submit" color="primary" expand="block" (click)="resendEmailVerification()">Resend Verification Email</ion-button>
+    </ion-row>
+  </ion-col>  
+  <ion-col>
+    <ion-row>
+      <ion-button (click)="goLogin()">Iniciar Sessió</ion-button>
+    </ion-row>
+  </ion-col>
+</ion-content>

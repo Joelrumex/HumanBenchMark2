@@ -10,14 +10,6 @@ export class HomePage {
 
   constructor(public toastController: ToastController) {}
 
-  register(){
-    this.presentToast("Pestanya Registrar-se")
-  }
-
-  login(){
-    this.presentToast("Pestanya Login")
-  }
-
   async presentToast(missatge) {
     const toast = await this.toastController.create({
       message: missatge,

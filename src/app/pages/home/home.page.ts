@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
 import { ToastController } from '@ionic/angular';
+import { Observable } from 'rxjs';
+import { AuthService } from 'src/app/services/auth.service';
+import { User } from 'src/app/shared/user.interface';
 
 @Component({
   selector: 'app-home',
@@ -8,10 +11,12 @@ import { ToastController } from '@ionic/angular';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
+  user$:Observable<User> = this.authSvc.afAuth.user;
 
   constructor(
     public toastController: ToastController,
-    private router:Router
+    private router:Router,
+    private authSvc: AuthService
   ) { }
 
   ngOnInit() {
@@ -20,7 +25,6 @@ export class HomePage implements OnInit {
   goToOtherMenu(){
     this.router.navigate(["home"])
   }
-
   //TOAST
   async presentToast(message) {
     const toast = await this.toastController.create({

@@ -23,8 +23,9 @@ export class RegisterPage implements OnInit {
     try{
       const user = await this.authSvc.register(email.value, password.value);
       if(user){
+        //CheckEmail Verified
         console.log("Ha Registrat->",user);
-        this.router.navigate(["login"]);
+        this.router.navigate(["/email-verified"]);
         this.presentToast("Compte Creat Correctament", "middle")
       }
     }

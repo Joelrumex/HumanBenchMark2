@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthGuard } from '../shared/auth.guard';
 
 import { Home2Page } from './home2.page';
 
@@ -18,7 +19,8 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: () => import("../pages/games/games.module").then(m => m.GamesPageModule)
+            loadChildren: () => import("../pages/games/games.module").then(m => m.GamesPageModule),
+            canActivate:[AuthGuard],
           }
         ]
       },
@@ -27,7 +29,8 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: () => import("../pages/home/home.module").then(m => m.HomePageModule)
+            loadChildren: () => import("../pages/home/home.module").then(m => m.HomePageModule),
+            canActivate:[AuthGuard],
           }
         ]
       },
@@ -36,7 +39,8 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: () => import("../pages/account/account.module").then(m => m.AccountPageModule)
+            loadChildren: () => import("../pages/account/account.module").then(m => m.AccountPageModule),
+            canActivate:[AuthGuard],
           }
         ]
       }

@@ -23,9 +23,16 @@ export class LoginPage implements OnInit {
     try{
       const user = await this.authSvc.login(email.value, password.value);
       if(user){
-        console.log("Ha iniciat Sessió->",user);
-        this.router.navigate(["home2"]);
-        this.presentToast("Iniciat Sessió Correctament", "middle");
+        const isVerified = this.authSvc.isEmailVerified(user);
+        //TODO check if user verified
+        console.log("Verfied->",isVerified);
+        if(isVerified){
+          this.router.navigate(["home2"]);
+          this.presentToast("Iniciat Sessió Correctament", "middle");
+        }else{
+          this.presentToast("Correu No Verificat", "middle");
+        }
+
       }
     }
     catch(error){console.log("Error->",error);}

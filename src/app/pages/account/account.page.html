@@ -1,9 +1,13 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>Compte</ion-title>
+    <ion-button slot="end" (click)="logOut()">Logout</ion-button>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-item *ngIf="user$ | async as user">
+    <ion-label></ion-label>
+    <ion-badge>{{user.email}}</ion-badge>
+  </ion-item>
 </ion-content>
