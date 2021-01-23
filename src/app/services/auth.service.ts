@@ -85,8 +85,12 @@ export class AuthService {
       email:user.email,
       displayName: user.displayName,
       emailVerified: user.emailVerified,
+      phoneNumber: user.phoneNumber,
+      providerId: user.providerId,
+      photoURL: user.photoURL,
     };
 
     return userRef.set(data, {merge:true});
   }
+
 }

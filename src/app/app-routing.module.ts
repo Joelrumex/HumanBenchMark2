@@ -42,6 +42,14 @@ const routes: Routes = [
     path: 'email-verified',
     loadChildren: () => import('./account/email-verified/email-verified.module').then( m => m.EmailVerifiedPageModule)
   },
+  {
+    path: 'game1',
+    loadChildren: () => import('./games/game1/game1.module').then( m => m.Game1PageModule)
+  },
+  {
+    path: 'game2',
+    loadChildren: () => import('./games/game2/game2.module').then( m => m.Game2PageModule)
+  },
 
 
 

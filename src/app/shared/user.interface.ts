@@ -3,4 +3,7 @@ export interface User{
     email:string;
     displayName:string;
     emailVerified:boolean;
+    phoneNumber:string;
+    providerId:string;
+    photoURL:string;
 }

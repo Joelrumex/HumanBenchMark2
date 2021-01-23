@@ -6,6 +6,7 @@ import { AuthGuard } from 'src/app/shared/auth.guard';
 import { User } from 'src/app/shared/user.interface';
 import { ToastController } from '@ionic/angular';
 
+
 @Component({
   selector: 'app-account',
   templateUrl: './account.page.html',
@@ -14,9 +15,16 @@ import { ToastController } from '@ionic/angular';
 export class AccountPage implements OnInit {
   user$:Observable<User> = this.authSvc.afAuth.user;
 
-  constructor(private authSvc: AuthService, private router:Router, private authGuard: AuthGuard, private toastController: ToastController) { }
+
+  constructor(private authSvc: AuthService, private router:Router, private authGuard: AuthGuard, private toastController: ToastController) { 
+
+  }
 
   ngOnInit() {
+  }
+  guardarDades(email, nom){
+    console.log(email);
+    console.log(nom.value);
   }
 
   async logOut(): Promise<void>{
